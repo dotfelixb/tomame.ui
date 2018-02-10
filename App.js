@@ -19,7 +19,7 @@ const RootNavigation = TabNavigator(
             navigationOptions: {
                 tabBarLabel: ({ focused, tintColor }) => {
                     let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Home</Text>
+                    return <Text style={{ color: textColor }}>Browse</Text>
                 },
                 tabBarIcon: ({ focused, tintColor }) => {
                     let iconColor = focused ? '#E92807' : 'gray'
