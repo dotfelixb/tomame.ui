@@ -49,11 +49,11 @@ const RootNavigation = TabNavigator(
             navigationOptions: {
                 tabBarLabel: ({ focused, tintColor }) => {
                     let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Basket</Text>
+                    return <Text style={{ color: textColor }}>Cart</Text>
                 },
                 tabBarIcon: ({ focused, tintColor }) => {
                     let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-basket' : 'ios-basket-outline'
+                    let iconName = focused ? 'ios-cart' : 'ios-cart-outline'
                     return <Ionicons name={iconName} size={25} color={iconColor} />
                 }
             }
@@ -64,7 +64,7 @@ const RootNavigation = TabNavigator(
             navigationOptions: {
                 tabBarLabel: ({ focused, tintColor }) => {
                     let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>My Account</Text>
+                    return <Text style={{ color: textColor }}>Me</Text>
                 },
                 tabBarIcon: ({ focused, tintColor }) => {
                     let iconColor = focused ? '#E92807' : 'gray'
@@ -79,7 +79,7 @@ const RootNavigation = TabNavigator(
             navigationOptions: {
                 tabBarLabel: ({ focused, tintColor }) => {
                     let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Settings</Text>
+                    return <Text style={{ color: textColor }}>More</Text>
                 },
                 tabBarIcon: ({ focused, tintColor }) => {
                     let iconColor = focused ? '#E92807' : 'gray'
