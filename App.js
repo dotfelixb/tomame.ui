@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, StatusBar, Animated } from 'react-native
 import { LinearGradient } from "expo"
 import { TabNavigator, TabBarBottom } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons'
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
+
 import HomeScreen from './app/screens/home.screen'
 import SearchScreen from './app/screens/search.screen'
 import BasketScreen from './app/screens/basket.screen';
