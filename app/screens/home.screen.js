@@ -72,7 +72,7 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 25,
+        paddingTop: 20,
         flexGrow: 1,
     },
     searchInput: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     searchBarInput: {
         backgroundColor: "#eee",
         color: "#000",
-        fontSize: 16, height: 32,
+        fontSize: 18, height: 34,
         paddingTop: 0
     },
     browseScrollView: {

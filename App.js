@@ -1,17 +1,23 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, StatusBar, Animated } from 'react-native';
 import { LinearGradient } from "expo"
-import { TabNavigator, TabBarBottom } from 'react-navigation'
+import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation'
 import { Ionicons } from '@expo/vector-icons'
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
 
+// top level screens
 import HomeScreen from './app/screens/home.screen'
 import SearchScreen from './app/screens/search.screen'
 import BasketScreen from './app/screens/basket.screen';
 import MyAccountScreen from './app/screens/account.scree'
 import SettingsScreen from './app/screens/settings.screen'
 
+// stack level screens
+import CategoryScreen from './app/screens/category.screen'
+
 const tomameColor = '#E92807'
+
+
 
 const RootNavigation = TabNavigator(
     {
