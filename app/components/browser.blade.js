@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import PropType from 'prop-types'
+import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
 export class NineGridBlade extends React.Component {
     static propType = {
@@ -12,11 +13,18 @@ export class NineGridBlade extends React.Component {
 
         return (
             <View style={styles.browseBladeContainer}>
-                <View>
-                    <Text style={styles.browseBladeText}>
-                        {this.props.title}
-                    </Text>
-                </View>
+                <Grid style={{ flexGrow: 1, paddingRight: 10 }}>
+                    <Col >
+                        <Text style={styles.browseBladeText}>
+                            {this.props.title}
+                        </Text>
+                    </Col>
+                    <Col style={{ alignItems: "flex-end", justifyContent: "center" }}>
+                        <TouchableOpacity onPress={() => { }}>
+                            <SimpleLineIcons name="arrow-right" size={26} color="#999" />
+                        </TouchableOpacity>
+                    </Col>
+                </Grid>
 
                 <View style={styles.browseBlade}>
                     <Grid>
