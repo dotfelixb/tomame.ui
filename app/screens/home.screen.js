@@ -13,10 +13,16 @@ export default class HomeScreen extends React.Component {
         this.state = {
             showLoadingIcon: false
         }
+
+        this.onTopDealNavigate = this.onTopDealNavigate.bind(this)
     }
 
     static navigationOptions = {
         title: 'Home'
+    }
+
+    onTopDealNavigate = () => {
+        this.props.navigation.navigate("Category")
     }
 
     render() {
@@ -60,8 +66,8 @@ export default class HomeScreen extends React.Component {
                             </Swiper>
                         </View>
                     </View>
-                    <NineGridBlade title="Top Deals" />
-                    <NineGridBlade title="Flash Deals" />
+                    <NineGridBlade title="Top Deals" onCategoryNavigate={this.onTopDealNavigate} />
+                    <NineGridBlade title="Flash Deals" onCategoryNavigate={this.onTopDealNavigate} />
 
                     <TwoColumnGridBlade title="More Deals" />
                 </ScrollView>

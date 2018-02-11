@@ -17,12 +17,23 @@ import CategoryScreen from './app/screens/category.screen'
 
 const tomameColor = '#E92807'
 
-
+const HomeStackView = StackNavigator({
+    Home: {
+        screen: HomeScreen,
+    },
+    Category: {
+        screen: CategoryScreen
+    }
+},
+    {
+        headerMode: "none",
+        cardStyle: { backgroundColor: "#fff" }
+    })
 
 const RootNavigation = TabNavigator(
     {
         Home: {
-            screen: HomeScreen,
+            screen: HomeStackView,
             path: '/',
             navigationOptions: {
                 tabBarLabel: ({ focused, tintColor }) => {

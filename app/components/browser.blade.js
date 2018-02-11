@@ -6,7 +6,8 @@ import { Ionicons, SimpleLineIcons } from '@expo/vector-icons';
 
 export class NineGridBlade extends React.Component {
     static propType = {
-        title: PropType.string.isRequired
+        title: PropType.string.isRequired,
+        onCategoryNavigate: PropType.func.isRequired
     }
 
     render() {
@@ -20,8 +21,8 @@ export class NineGridBlade extends React.Component {
                         </Text>
                     </Col>
                     <Col style={{ alignItems: "flex-end", justifyContent: "center" }}>
-                        <TouchableOpacity onPress={() => { }}>
-                            <SimpleLineIcons name="arrow-right" size={26} color="#999" />
+                        <TouchableOpacity onPress={this.props.onCategoryNavigate}>
+                            <SimpleLineIcons name="arrow-right" size={26} color="#333" />
                         </TouchableOpacity>
                     </Col>
                 </Grid>
