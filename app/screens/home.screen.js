@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { SearchBar } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons'
+import Swiper from 'react-native-swiper'
+import DiscoverySlideShow from '../components/discoveryslideshow'
+import { NineGridBlade, TwoColumnGridBlade } from '../components/browser.blade'
 
 export default class HomeScreen extends React.Component {
     constructor(props) {
@@ -28,21 +31,39 @@ export default class HomeScreen extends React.Component {
                         icon={{ type: 'ionicons', name: 'search' }}
                         clearIcon={{ type: 'ionicons', name: 'close' }}
                         showLoadingIcon={this.state.showLoadingIcon}
-                        containerStyle={{ backgroundColor: '#fff', borderTopWidth: 0, borderBottomWidth: 0 }}
-                        inputStyle={{ backgroundColor: "#eee", color: "#000", fontSize: 16, height: 32 }} />
+                        containerStyle={styles.searchBarContainer}
+                        inputStyle={styles.searchBarInput} />
                 </View>
 
-                <ScrollView style={{ flexGrow: 1 }} >
-                    <View style={{ backgroundColor: '#555', height: 240 }}>
+                <ScrollView style={styles.browseScrollView} >
+
+                    <View >
+                        <View style={styles.discoverySlideShow}>
+                            <Swiper ref="swiper"
+                                autoplay={true}
+                                loop={true}
+                                showsPagination={true}
+                                activeDotColor="#E92807"
+                                dotColor="#ddd"
+                                activeDotStyle={{ marginBottom: -15 }}
+                                dotStyle={{ marginBottom: -15 }}
+                                // this is where we track which screen is swiped to
+                                onIndexChanged={() => { }}
+                                scrollEnabled={true} >
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                                <DiscoverySlideShow />
+                            </Swiper>
+                        </View>
                     </View>
-                    <View style={{ backgroundColor: '#666', height: 240 }}>
-                    </View>
-                    <View style={{ backgroundColor: '#777', height: 240 }}>
-                    </View>
-                    <View style={{ backgroundColor: '#888', height: 240 }}>
-                    </View>
-                    <View style={{ backgroundColor: '#999', height: 240 }}>
-                    </View>
+                    <NineGridBlade title="Top Deals" />
+                    <NineGridBlade title="Flash Deals" />
+
+                    <TwoColumnGridBlade title="More Deals" />
                 </ScrollView>
             </View>
         )
@@ -54,5 +75,30 @@ const styles = StyleSheet.create({
         paddingTop: 25,
         flexGrow: 1,
     },
-    searchInput: { borderColor: 'black', borderWidth: 1, height: 32, }
+    searchInput: {
+        borderColor: 'black', borderWidth: 1, height: 32,
+    },
+    searchBarContainer: {
+        backgroundColor: '#fff',
+        borderTopWidth: 0,
+        borderBottomWidth: 0,
+        paddingTop: 0,
+    },
+    searchBarInput: {
+        backgroundColor: "#eee",
+        color: "#000",
+        fontSize: 16, height: 32,
+        paddingTop: 0
+    },
+    browseScrollView: {
+        flex: 1,
+        paddingBottom: 10
+    },
+    discoverySlideShow: {
+        height: 140,
+        margin: 10,
+        marginTop: 5,
+        borderRadius: 5,
+        backgroundColor: '#ccc'
+    }
 })
