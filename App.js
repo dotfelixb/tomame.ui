@@ -1,153 +1,157 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image, StatusBar, Animated } from 'react-native';
-import { LinearGradient } from "expo"
-import { TabNavigator, TabBarBottom, StackNavigator } from 'react-navigation'
-import { Ionicons } from '@expo/vector-icons'
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  StatusBar,
+  Animated
+} from "react-native";
+import { LinearGradient } from "expo";
+import { TabNavigator, TabBarBottom, StackNavigator } from "react-navigation";
+import { Ionicons } from "@expo/vector-icons";
+import ScrollableTabView, {
+  DefaultTabBar
+} from "react-native-scrollable-tab-view";
 
 // top level screens
-import HomeScreen from './app/screens/home.screen'
-import SearchScreen from './app/screens/search.screen'
-import BasketScreen from './app/screens/basket.screen';
-import MyAccountScreen from './app/screens/account.scree'
-import SettingsScreen from './app/screens/settings.screen'
+import HomeScreen from "./app/screens/home.screen";
+import SearchScreen from "./app/screens/search.screen";
+import BasketScreen from "./app/screens/basket.screen";
+import MyAccountScreen from "./app/screens/account.scree";
+import SettingsScreen from "./app/screens/settings.screen";
 
 // stack level screens
-import CategoryScreen from './app/screens/category.screen'
+import CategoryScreen from "./app/screens/category.screen";
 
-const tomameColor = '#E92807'
+const tomameColor = "#E92807";
 
-const HomeStackView = StackNavigator({
+const HomeStackView = StackNavigator(
+  {
     Home: {
-        screen: HomeScreen,
+      screen: HomeScreen
     },
     Category: {
-        screen: CategoryScreen
+      screen: CategoryScreen
     }
-},
-    {
-        headerMode: "none",
-        cardStyle: { backgroundColor: "#fff" }
-    })
+  },
+  {
+    headerMode: "none",
+    cardStyle: { backgroundColor: "#fff" }
+  }
+);
 
 const RootNavigation = TabNavigator(
-    {
-        Home: {
-            screen: HomeStackView,
-            path: '/',
-            navigationOptions: {
-                tabBarLabel: ({ focused, tintColor }) => {
-                    let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Browse</Text>
-                },
-                tabBarIcon: ({ focused, tintColor }) => {
-                    let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-compass' : 'ios-compass-outline'
-                    return <Ionicons name={iconName} size={25} color={iconColor} />
-                }
-            }
+  {
+    Home: {
+      screen: HomeStackView,
+      path: "/",
+      navigationOptions: {
+        tabBarLabel: ({ focused, tintColor }) => {
+          let textColor = focused ? "#E92807" : "gray";
+          return <Text style={{ color: textColor }}>Browse</Text>;
         },
-        Search: {
-            screen: SearchScreen,
-            path: '/search',
-            navigationOptions: {
-                tabBarLabel: ({ focused, tintColor }) => {
-                    let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Search</Text>
-                },
-                tabBarIcon: ({ focused, tintColor }) => {
-                    let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-search' : 'ios-search-outline'
-                    return <Ionicons name={iconName} size={25} color={iconColor} />
-                }
-            }
-        },
-        Basket: {
-            screen: BasketScreen,
-            path: '/basket',
-            navigationOptions: {
-                tabBarLabel: ({ focused, tintColor }) => {
-                    let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Cart</Text>
-                },
-                tabBarIcon: ({ focused, tintColor }) => {
-                    let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-cart' : 'ios-cart-outline'
-                    return <Ionicons name={iconName} size={25} color={iconColor} />
-                }
-            }
-        },
-        MyAccount: {
-            screen: MyAccountScreen,
-            path: '/myaccount',
-            navigationOptions: {
-                tabBarLabel: ({ focused, tintColor }) => {
-                    let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>Me</Text>
-                },
-                tabBarIcon: ({ focused, tintColor }) => {
-                    let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-contact' : 'ios-contact-outline'
-                    return <Ionicons name={iconName} size={25} color={iconColor} />
-                }
-            }
-        },
-        Settings: {
-            screen: SettingsScreen,
-            path: '/settings',
-            navigationOptions: {
-                tabBarLabel: ({ focused, tintColor }) => {
-                    let textColor = focused ? '#E92807' : 'gray'
-                    return <Text style={{ color: textColor }}>More</Text>
-                },
-                tabBarIcon: ({ focused, tintColor }) => {
-                    let iconColor = focused ? '#E92807' : 'gray'
-                    let iconName = focused ? 'ios-options' : 'ios-options-outline'
-                    return <Ionicons name={iconName} size={25} color={iconColor} />
-                }
-            }
+        tabBarIcon: ({ focused, tintColor }) => {
+          let iconColor = focused ? "#E92807" : "gray";
+          let iconName = focused ? "ios-compass" : "ios-compass-outline";
+          return <Ionicons name={iconName} size={25} color={iconColor} />;
         }
+      }
     },
-    {
-        tabBarPosition: 'bottom',
-        animationEnabled: false,
-        configureTransition: (currentTransitionProps, nextTransitionProps) => ({
-            timing: Animated.spring,
-            tension: 1,
-            friction: 35
-        }),
-        swipeEnabled: false
+    Search: {
+      screen: SearchScreen,
+      path: "/search",
+      navigationOptions: {
+        tabBarLabel: ({ focused, tintColor }) => {
+          let textColor = focused ? "#E92807" : "gray";
+          return <Text style={{ color: textColor }}>Search</Text>;
+        },
+        tabBarIcon: ({ focused, tintColor }) => {
+          let iconColor = focused ? "#E92807" : "gray";
+          let iconName = focused ? "ios-search" : "ios-search-outline";
+          return <Ionicons name={iconName} size={25} color={iconColor} />;
+        }
+      }
+    },
+    Basket: {
+      screen: BasketScreen,
+      path: "/basket",
+      navigationOptions: {
+        tabBarLabel: ({ focused, tintColor }) => {
+          let textColor = focused ? "#E92807" : "gray";
+          return <Text style={{ color: textColor }}>Cart</Text>;
+        },
+        tabBarIcon: ({ focused, tintColor }) => {
+          let iconColor = focused ? "#E92807" : "gray";
+          let iconName = focused ? "ios-cart" : "ios-cart-outline";
+          return <Ionicons name={iconName} size={25} color={iconColor} />;
+        }
+      }
+    },
+    MyAccount: {
+      screen: MyAccountScreen,
+      path: "/myaccount",
+      navigationOptions: {
+        tabBarLabel: ({ focused, tintColor }) => {
+          let textColor = focused ? "#E92807" : "gray";
+          return <Text style={{ color: textColor }}>Me</Text>;
+        },
+        tabBarIcon: ({ focused, tintColor }) => {
+          let iconColor = focused ? "#E92807" : "gray";
+          let iconName = focused ? "ios-contact" : "ios-contact-outline";
+          return <Ionicons name={iconName} size={25} color={iconColor} />;
+        }
+      }
+    },
+    Settings: {
+      screen: SettingsScreen,
+      path: "/settings",
+      navigationOptions: {
+        tabBarLabel: ({ focused, tintColor }) => {
+          let textColor = focused ? "#E92807" : "gray";
+          return <Text style={{ color: textColor }}>More</Text>;
+        },
+        tabBarIcon: ({ focused, tintColor }) => {
+          let iconColor = focused ? "#E92807" : "gray";
+          let iconName = focused ? "ios-options" : "ios-options-outline";
+          return <Ionicons name={iconName} size={25} color={iconColor} />;
+        }
+      }
     }
+  },
+  {
+    tabBarPosition: "bottom",
+    animationEnabled: false,
+    swipeEnabled: false
+  }
 );
 
 export default class App extends React.Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        StatusBar.setBarStyle("dark-content", true)
-    }
+    StatusBar.setBarStyle("dark-content", true);
+  }
 
-    render() {
-        return (
-            <RootNavigation />
-        );
-    }
+  render() {
+    return <RootNavigation />;
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#E92807',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    gradient: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    logo: {
-        width: 180,
-        height: 180
-    }
+  container: {
+    flex: 1,
+    backgroundColor: "#E92807",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  gradient: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  logo: {
+    width: 180,
+    height: 180
+  }
 });

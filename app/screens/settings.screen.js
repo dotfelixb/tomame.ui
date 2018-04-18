@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default class SettingsScreen extends React.Component {
     static navigationOptions = {
-        title: 'Settings'
+        title: "Settings"
     }
 
     render() {
@@ -12,7 +12,7 @@ export default class SettingsScreen extends React.Component {
             <View style={styles.container}>
                 <Text>Settings Screen</Text>
             </View>
-        )
+        );
     }
 }
 
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 25,
     }
-})
+});
